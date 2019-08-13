@@ -1,4 +1,4 @@
-package com.master.spring.spring2proj4.res;
+package com.master.spring.spring2proj4.res.blc;
 
 public interface SortAlgorithm {
 	

@@ -7,22 +7,21 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.master.spring.spring2proj4.res.BinarySearchImpl;
+import com.master.spring.spring2proj4.res.cdi.SomeCdiBusiness;
 
 @ComponentScan(basePackages = { "com.master.spring.spring2proj4.res" })
 @Configuration
-public class Spring2proj4Application {
+public class Spring2proj4CdiApplication {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(Spring2proj4Application.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(Spring2proj4CdiApplication.class);
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Spring2proj4Application.class);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+				Spring2proj4CdiApplication.class);
 
-		BinarySearchImpl binarySearchImpl = applicationContext.getBean(BinarySearchImpl.class);
+		SomeCdiBusiness someCdiBusiness = applicationContext.getBean(SomeCdiBusiness.class);
 
-		int result1 = binarySearchImpl.binarySearch(new int[] { 1, 2, 3 }, 2);
-		LOGGER.info("result: {}", result1);
-
+		LOGGER.info("{} - {}", someCdiBusiness, someCdiBusiness.getSomeCdiDao());
 	}
 
 }
