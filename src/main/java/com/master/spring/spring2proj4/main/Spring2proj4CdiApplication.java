@@ -14,14 +14,17 @@ public class Spring2proj4CdiApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(Spring2proj4CdiApplication.class);
 
-	public static void main(String[] args) {
-		try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
-				Spring2proj4CdiApplication.class)) {
-
-			SomeCdiBusiness someCdiBusiness = applicationContext.getBean(SomeCdiBusiness.class);
-
-			LOGGER.info("{} - {}", someCdiBusiness, someCdiBusiness.getSomeCdiDao());
-		}
-	}
+	/**
+	 * Commented for maven build (two main methods in one application)
+	 */
+//	public static void main(String[] args) {
+//		try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+//				Spring2proj4CdiApplication.class)) {
+//
+//			SomeCdiBusiness someCdiBusiness = applicationContext.getBean(SomeCdiBusiness.class);
+//
+//			LOGGER.info("{} - {}", someCdiBusiness, someCdiBusiness.getSomeCdiDao());
+//		}
+//	}
 
 }
